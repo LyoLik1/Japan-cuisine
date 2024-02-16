@@ -1,4 +1,4 @@
-import { FC, createContext } from "react";
+import { createContext } from "react";
 
 interface CartItem {
   id: string;
