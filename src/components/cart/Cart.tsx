@@ -13,7 +13,6 @@ interface CartItem {
 
 interface CartProps {
   onHideCart: MouseEventHandler;
-  items: CartItem[];
 }
 
 export const Cart: FC<CartProps> = ({ onHideCart }) => {
