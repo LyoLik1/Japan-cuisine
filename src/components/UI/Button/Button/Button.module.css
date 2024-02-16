@@ -1,0 +1,38 @@
+.button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #6b068a;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+.button:hover,
+.button:active {
+  background-color: #47035d;
+  border-color: #47035d;
+  color: white;
+}
+.primary {
+  color: #6b068a;
+}
+.secondary {
+  background: #6b068a;
+  color: white;
+}
+.purple {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #6b068a;
+  border: 1px solid #6b068a;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0.25rem;
+  padding: 0;
+}
