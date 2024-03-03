@@ -13,12 +13,7 @@ interface SubmitOrderProps {
   onSubmit: (UserData: UserData) => any;
 }
 
-// const isInputValid = (inputValue: string): boolean => {
-//   return inputValue.trim() !== "";
-// };
-
 export const SubmitOrder: FC<SubmitOrderProps> = ({ onCancel, onSubmit }) => {
-  let isFormValid = false;
   const {
     value: enteredName,
     hasError: hasNameInputError,
@@ -46,9 +41,6 @@ export const SubmitOrder: FC<SubmitOrderProps> = ({ onCancel, onSubmit }) => {
     inputLostFocusHandler: adressInputLostFocusHandler,
   } = useSubmitOrder({ validateValueFunc: (val: string) => val.trim() !== "" });
 
-  if (isEnteredNameValid && isEnteredCityValid && isEnteredAdressValid) {
-    isFormValid = true;
-  }
   const formSubmitHandler = (event: FormEvent) => {
     event.preventDefault();
 
