@@ -13,6 +13,7 @@ interface CartContextType {
   totalAmount: number;
   addItem: (item: CartItem) => void;
   removeItem: (id: string) => void;
+  clearCart: () => void;
 }
 
 const defaultCardState = {
@@ -83,6 +84,9 @@ const cartReducer = (
       totalAmount: updatedTotalAmount,
     };
   }
+  if (action.type === "CLEAR_CART") {
+    return defaultCardState;
+  }
   return defaultCardState;
 };
 
@@ -112,11 +116,16 @@ export const CartContextProvider: FC<CartContextProviderProps> = ({
     });
   };
 
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR_CART" });
+  };
+
   const cartContext: CartContextType = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
