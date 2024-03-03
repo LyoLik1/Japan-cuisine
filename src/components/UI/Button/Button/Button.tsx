@@ -7,6 +7,7 @@ interface ButtonProps {
   className?: string;
   typeButton?: "button" | "submit" | "reset";
   type?: "primary" | "secondary" | "purple";
+  disabled?: boolean;
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -16,12 +17,14 @@ export const Button: FC<ButtonProps> = ({
   type = "primary",
   onClick = () => {},
   typeButton,
+  disabled = false,
 }) => {
   return (
     <button
       onClick={onClick}
       className={cn(className, styles.button, styles[type])}
       type={typeButton}
+      disabled={disabled}
     >
       {label}
     </button>

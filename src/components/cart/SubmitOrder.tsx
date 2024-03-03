@@ -41,6 +41,12 @@ export const SubmitOrder: FC<SubmitOrderProps> = ({ onCancel, onSubmit }) => {
     inputLostFocusHandler: adressInputLostFocusHandler,
   } = useSubmitOrder({ validateValueFunc: (val: string) => val.trim() !== "" });
 
+  let isFormValid = false;
+
+  if (isEnteredNameValid && isEnteredCityValid && isEnteredAdressValid) {
+    isFormValid = true;
+  }
+
   const formSubmitHandler = (event: FormEvent) => {
     event.preventDefault();
 
@@ -124,6 +130,7 @@ export const SubmitOrder: FC<SubmitOrderProps> = ({ onCancel, onSubmit }) => {
         className="bg-primary-purple"
         type="secondary"
         onClick={() => {}}
+        disabled={!isFormValid}
       />
       <Button
         label="Cancel"
